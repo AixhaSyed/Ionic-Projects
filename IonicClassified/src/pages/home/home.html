@@ -1,0 +1,188 @@
+<ion-header >
+  <ion-navbar  color="light" >
+    <ion-title  style="text-align: center">ClassiFied App </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+<ion-row  class="main-menu">
+        <ion-col width-25>
+            <i full>
+                <ion-icon name="home" style="font-size:30px ; color: #6E7B8B" (click)= "gotoPage2(_HomePage)" ></ion-icon>
+            </i>
+        </ion-col>
+        
+        
+        
+        <ion-col width-25>
+            <i (click)="gotoPage3(_PostAddPage)"  >
+                <ion-icon name="md-person-add" style="font-size:30px ; color: #6E7B8B "></ion-icon>
+            </i>
+        </ion-col>
+       
+         <ion-col width-25>
+                
+                <i (click)="addToCart(ad)"  style="font-size: 30px ; color: #6E7B8B" ><ion-icon name="md-cart" ></ion-icon></i>
+                
+        </ion-col>
+        <ion-col width-25>
+            <i full (click)="categoryToggle()"  style="font-size:30px ; color: #6E7B8B" >
+                
+                <ion-icon name="md-list" ></ion-icon>
+            </i>
+        </ion-col>
+    </ion-row>
+    <br/>
+    
+<ion-content class="home"> 
+    
+    <ion-list *ngIf="category">
+        <ion-list-header>
+            Categories
+        </ion-list-header>
+        <ion-item *ngFor=" let cat of categories" (click)="gotoPostAddPage(cat)">
+            {{cat}}
+        </ion-item>
+    </ion-list>
+    <ion-card>
+      <div id="hello">
+     <ion-card-header>
+          
+            Add Post
+            
+        </ion-card-header>
+        </div>
+       
+          <ion-item>
+    <ion-avatar item-left>
+      <img src= ' http://www.samsung.com/global/galaxy/galaxy-note5/images/galaxy-note5_gallery_left-perspective_white_s3.png' />
+    </ion-avatar>
+    <h2>Phone</h2>
+    <p>November 5, 1955</p>
+  
+  </ion-item>
+        
+            <img src='http://www.samsung.com/global/galaxy/galaxy-note5/images/galaxy-note5_gallery_left-perspective_white_s3.png' width="130" height="240"/>
+            <ion-card-title>
+            Galaxy NOTE5
+            <!--{{ad.id}}-->
+            </ion-card-title>
+            <p>
+            55,000 PKR |  Phone 
+            </p>
+            <hr>
+             <p>
+             Syed Haider Ali | 0340-1234567
+            </p>
+            <br>
+            <button ion-item small c color="danger" class="center"  (click)="addToCart(this.ad)">
+          <ion-icon name="cart"></ion-icon> Add to Cart
+        </button>
+        <br/>
+        <button ion-item small icon-left color="danger" class="center"  (click) ="deleteItem(ad)">
+          <ion-icon name="trash"></ion-icon> Delete 
+        </button>
+        
+        
+          
+    </ion-card>
+          <ion-card>
+          
+           <ion-item>
+    <ion-avatar item-left>
+      <img src= ' http://toyota-central.com/ADMIN/Corolla/BlackGLI.png'/>
+    </ion-avatar>
+    <h2>Phone</h2>
+    <p>November 5, 1955</p>
+  
+  </ion-item>
+        
+            <img src=' http://toyota-central.com/ADMIN/Corolla/BlackGLI.png' width="130" height="240"/>
+            <ion-card-title>
+            Corolla XLI 
+            <!--{{ad.id}}-->
+            </ion-card-title>
+            <p>
+             PKR 14,40,000 |  CAR
+            </p>
+            <hr>
+             <p>
+             Asmara Sheikh | 0300-12000122
+            </p>
+            <br>
+            <button ion-item small c color="danger" class="center"  (click)="addToCart(this.ad)">
+          <ion-icon name="cart"></ion-icon> Add to Cart
+        </button>
+        <br/>
+        <button ion-item small icon-left color="danger" class="center"  (click) ="deleteItem(ad)">
+          <ion-icon name="trash"></ion-icon> Delete 
+        </button>
+        
+        
+          
+    </ion-card>
+          
+          
+          
+       
+        <ion-card>
+            <ion-card-content *ngFor=" let ad of ads">
+                 
+  <ion-item>
+    <ion-avatar item-left>
+      <img src= "{{ ad.MainImage ||' http://17c4dcd7f91259d8cc66-f5932f6db0039e8c02f89a70c334ff0e.r2.cf1.rackcdn.com/wp-content/uploads/sites/2/GalaxyNote5aircommand.jpg'}}"/>
+    </ion-avatar>
+    <h2>{{ad.Title}}</h2>
+    <p>November 5, 1955</p>
+    <p>{{ad.id}}</p>
+  </ion-item>
+           
+            <img src="{{ ad.MainImage ||' http://17c4dcd7f91259d8cc66-f5932f6db0039e8c02f89a70c334ff0e.r2.cf1.rackcdn.com/wp-content/uploads/sites/2/GalaxyNote5aircommand.jpg'}}"/>
+            <ion-card-title>
+            {{ad.Title}}
+            <!--{{ad.id}}-->
+            </ion-card-title>
+            <p>
+            {{ad.Price}}  {{ad.Category}}
+            </p>
+             <p>
+            {{ad.ContactNumber}}  {{ad.PostedBy}}
+            </p>
+            
+            <button ion-item small icon-left color="danger" class="center"  (click)="addToCart(this.ad)">
+          <ion-icon name="cart"></ion-icon> Add to Cart
+        </button>
+        <br/>
+        <button ion-item small icon-left color="danger" class="center"  (click) ="deleteItem(ad)">
+          <ion-icon name="trash"></ion-icon> Delete 
+        </button>
+         
+              
+        
+    
+        </ion-card-content>
+    </ion-card>
+   </ion-content>
+
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

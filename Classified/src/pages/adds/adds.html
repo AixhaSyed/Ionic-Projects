@@ -1,0 +1,45 @@
+<!--
+  Generated template for the Adds page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!--<ion-header>
+
+  <ion-navbar>
+    <ion-title>Adds</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+</ion-content>-->
+
+
+<ion-navbar primary *navbar>
+  <ion-title >
+    Ads List
+  </ion-title>
+</ion-navbar>
+
+
+    
+
+<ion-content class="home"> 
+    
+   <ion-list>
+        <ion-item ngFor="ad of ads">
+            <ion-avatar item-left>
+            <!--<img src="images/nin-live.png">-->
+            <img src="{{ads.MainImage}}">
+            </ion-avatar>
+            <h2>{{ads.Title}}</h2>
+            <p>{{ads.Price}} | {{ads.Category}}</p>
+            <ion-icon name="md-arrow-dropright" item-right></ion-icon>
+        </ion-item>
+    </ion-list>
+
+  
+</ion-content>

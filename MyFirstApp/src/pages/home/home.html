@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar color="light">
+    <ion-title>
+        IONIC2 TODO APP
+    </ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="addItem()"><ion-icon name="add-circle"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of items" (click)="viewItem(item)">{{item.title}}
+      <br/><br/>
+      <hr/>
+      <!--<button danger (click) = "deleteItem(item)" ><icon trash></icon> Delete</button>-->
+     
+             <!--<button ion-button color="danger" round  icon-left (click) = "deleteItem(item)" ><icon trash></icon>
+             Default</button>-->
+             
+             <button ion-button icon-only   icon-left color="danger" (click) = "deleteItem(item)"><ion-icon name="trash">
+               Delete</ion-icon><br/></button>
+      </ion-item>
+      </ion-list>
+</ion-content>

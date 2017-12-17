@@ -1,0 +1,62 @@
+<!--
+  Generated template for the WishList page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="light" >
+    <ion-title>WISHLIST</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<!--<ion-content padding>-->
+
+<!--</ion-content>-->
+<!--<ion-header>
+  <ion-navbar>
+    <ion-title>
+      WishList
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+<div>
+  <app-products-list [productList]="mycart" [store]="false">
+  </app-products-list> 
+</div>
+</ion-content>-->
+
+             <ion-content padding>
+              <ion-list>
+        <!--<ion-item *ngFor=" let ad of ads">-->
+
+  <img src='http://toyota-central.com/ADMIN/Corolla/BlackGLI.png' width="240" height="240"/>
+  
+      <!--<h1>
+      {{ad.title}}
+      </h1>-->
+      
+    <h3><b>Title : </b> Corollo XLI</h3>
+    <h3><b>Price : </b>  PKR 14,40,000 </h3>
+    <h3><b>Contact NUmber : </b>0300-1200022</h3>
+    <h3><b>POsted By : </b> Asmara Sheikh</h3>
+    <!--<h3><b>Image : </b> http://toyota-central.com/ADMIN/Corolla/BlackGLI.png</h3>-->
+    <h3><b>Catagory : </b> CAR</h3>
+      <h3><b>Description : </b> Good Condition...Prize Bit Negotibale</h3>
+    <!--<h3><b>Featured : </b> {{ad.Feature}}</h3>-->
+ 
+            <hr>
+            
+                <!--<button ion-button icon-only   icon-left color="danger" (click) ="deleteItem(ad)"><ion-icon name="trash">
+               Delete</ion-icon><br/></button>-->
+                <button ion-item small icon-left color="danger" class="center"  (click) ="deleteItem(ad)">
+          <ion-icon name="trash"></ion-icon> Delete 
+        </button>
+      
+        <!--</ion-item>s-->
+    </ion-list>
+             </ion-content>

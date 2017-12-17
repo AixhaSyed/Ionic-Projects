@@ -1,0 +1,224 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>CLassfied App</ion-title>
+     
+    <!--<ion-col width-20>
+            <i >
+                
+           <ion-icon ios="ios-log-in"  md="md-log-in"  style="font-size:28px ; color:brown ; margin-top:  -700px
+; margin-left:1320px"></ion-icon></i>
+            <!--</i>-->
+        <!--</ion-col>-->
+         <!--<ion-col width-20>-->
+            <!--<i full   style="font-size:28px ; color:brown ; margin-top : -700px
+             ; margin-left:1250px" >
+             <ion-icon ios="ios-log-out" md="md-log-out"></ion-icon>
+            </i>
+        </ion-col>-->
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+ 
+<ion-row  class="main-menu">
+        <ion-col width-20>
+            <i full>
+                <ion-icon name="home" style="font-size:30px" ></ion-icon>
+            </i>
+        </ion-col>
+       
+         <ion-col width-20>
+                
+                <i (click)="goToOtherPage()"  style="font-size: 30px"><ion-icon name="md-cart" ></ion-icon></i>
+                
+        </ion-col>
+        <ion-col width-20>
+            <!--<i full (click)="gotoPage(_SearchPage)" style="font-size:30px" >
+                 <ion-icon ios="ios-search" md="md-search"></ion-icon>
+            </i>-->
+            
+                <i (click)="goToOtherPage()"  style="font-size: 30px"><ion-icon ios="ios-search" md="md-search"></ion-icon>
+                </i>
+        </ion-col>
+        <ion-col width-20>
+            <i (click)="goToOtherPage2()"  style="font-size:30px" >
+                <ion-icon name="md-list" ></ion-icon>
+            </i>
+        </ion-col>
+        <ion-col width-20>
+            <i (click)="goToOtherPage()" >
+                <ion-icon name="md-person-add" style="font-size:30px ; color: pink "></ion-icon>
+            </i>
+        </ion-col>
+    </ion-row>
+    <br/>
+   
+    
+
+<ion-content class="home"> 
+    
+    <ion-list *ngIf="category">
+        <ion-list-header>
+            Categories
+        </ion-list-header>
+        <ion-item ngFor="cat of categories" (click)="gotoAdsPage(cat)">
+            {{cat}}
+        </ion-item>
+    </ion-list>
+    
+  
+  <ion-card>
+        <ion-card-header>
+            Feature Ads
+        </ion-card-header>
+        
+        <ion-card-content ngFor="ad of ads">
+            <img src="{{ads.MainImage || 'http://drop.ndtv.com/TECH/product_database/images/92201572120PM_635_huawei_mate_s.jpeg'}}"/>
+            <ion-card-title>
+            {{ads.Title}}
+            <!--phone -->
+            </ion-card-title>
+            <p>
+            {{ads.Price}} | {{ads.Category}}
+            </p>
+        </ion-card-content>
+    </ion-card>
+  
+  
+  
+</ion-content>
+       
+  
+  
+  
+  
+
+  <!--</ion-card-content>-->
+<!--</ion-content>-->
+
+<!--<h1 id="large">
+<img src="http://img-teknosa.mncdn.com/TeknosaImg/productImages/455x348/125071589-3-samsung-n920-galaxy-note-5-altin-akilli-telefon.jpg"
+ alt="phone" width="300" height="170" align="top" />
+Sumsung Note 5 
+  <h1 id="new"> Price = 55,000 PKR
+<h1 id="new1"> Posted Date: 22:Aug:2016
+<h1 id="new2"> Contact : 0312:1234567  
+</h1>        
+</h1>    
+</h1>
+</h1>
+</fieldset>
+<fieldset id="shade">
+<h1 id="large">
+
+<img src="http://www.eteckonline.com/store/image/cache/data/Hp-Elitebook-8570p-front-500x500.jpg"
+ alt="laptop" width="300" height="170" align="top" />
+Hp Core i5
+  <h1 id="new"> Price = 24,000 PKR
+<h1 id="new1">  Posted Date: 23:Aug:2016   
+<h1 id="new2">Contact : 0312:1234567 
+</h1>        
+</h1>    
+</h1>
+</h1>
+</fieldset>
+<fieldset id="shade">
+<h1 id="large">
+
+<img src="https://cache2.pakwheels.com/system/car_generation_pictures/3121/original/2015_Toyota_Corolla.jpg?1448538283"
+ alt="car" width="300" height="170" align="top" />
+Corolla XLI 
+  <h1 id="new"> Price = 14,40,000 PKR
+<h1 id="new1"> Posted Date: 26:Aug:2016
+<h1 id="new2"> Contact : 0312:1234567  
+</h1>        
+</h1>    
+</h1>
+</h1>
+</fieldset>
+<fieldset id="shade">
+<h1 id="large">
+
+<img src="http://drop.ndtv.com/TECH/product_database/images/92201572120PM_635_huawei_mate_s.jpeg"
+ alt="phone" width="300" height="170" align="top" />
+Huawei Mate S 
+  <h1 id="new"> Price = 35,000 PKR
+<h1 id="new1"> Posted Date: 24:Aug:2016
+<h1 id="new2"> Contact : 0312:1234567  
+</h1>        
+</h1>    
+</h1>
+</h1>
+</fieldset>
+
+<fieldset id="shade">
+<h1 id="large">
+
+<img src="https://assets.pcmag.com/media/images/316160-dell-inspiron-14z-core-i5.jpg?thumb=y&width=275&height=230"
+ alt="laptop" width="300" height="170" align="top" />
+Dell Inspirion i5 
+  <h1 id="new"> Price = 42,500 PKR
+<h1 id="new1"> Posted Date: 25:Aug:2016
+<h1 id="new2"> Contact : 0312:1234567  
+</h1>        
+</h1>    
+</h1>
+</h1>
+</fieldset>
+
+<fieldset id="shade">
+<h1 id="large">
+
+<img src="http://autos.columnpk.net/wp-content/uploads/2014/12/Toyota-Vitz-Yaris-2015-Model-Price-in-Pakistan.jpg"
+ alt="car" width="300" height="170" align="top" />
+Toyota Vitz 
+  <h1 id="new"> Price : 9,65,000 PKR
+<h1 id="new1"> Posted Date : 28:Aug:2016
+<h1 id="new2"> Contact : 0312:1234567  
+</h1>        
+</h1>    
+</h1>
+</h1>
+
+</fieldset>
+    </ion-content>
+-->
+
+    
+
+<!--<ion-content class="home"> 
+    
+    <ion-list *ngIf="category">
+        <ion-list-header>
+            Categories
+        </ion-list-header>
+        <ion-item *ngFor="#cat of categories" (click)="gotoAdsPage(cat)">
+            {{cat}}
+        </ion-item>
+    </ion-list>
+    
+  
+  <ion-card>
+        <ion-card-header>
+            Feature Ads
+        </ion-card-header>
+        
+        <ion-card-content *ngFor="#ad of ads">
+            <img src="{{ad.MainImage || 'images/nin-live.png'}}"/>
+            <ion-card-title>
+            {{ad.Title}}
+            </ion-card-title>
+            <p>
+            {{ad.Price}} | {{ad.Category}}
+            </p>
+        </ion-card-content>
+    </ion-card>
+  
+  
+
+  -->
+  
+  
+  
+
